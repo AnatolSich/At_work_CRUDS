@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static util.ActionOperationEnum.*;
 
 public class UserController extends HttpServlet {
-    private static final String INSERT_OR_EDIT = "";
-    private static final String USER_LIST = "";
+    private static final String INSERT_OR_EDIT = "/editUser.jsp";
+    private static final String USER_LIST = "/listUser.jsp";
     private UserDao userDao;
 
 
@@ -51,6 +54,24 @@ public class UserController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        User user = new User();
+        user.setFirstName(req.getParameter("firstName"));
+        user.setLastName(req.getParameter("lastName"));
+        user.setEmail(req.getParameter("email"));
+        try {
+            Date dob = new SimpleDateFormat("dd/mm/yyy").parse(req.getParameter("dob"));
+            user.setDob(dob);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String id = req.getParameter("id");
+        if(id==null || id.isEmpty()) {
+            userDao.addUser(user);
+        } else {
+            user.setId(Integer.parseInt(id));
+            userDao.updateUser(user);
+        }
+        req.setAttribute("users", userDao.getAllUsers());
+        req.getRequestDispatcher(USER_LIST).forward(req,resp);
     }
 }

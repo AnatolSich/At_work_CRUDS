@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Test_JDBC_CRUD" target="1.5" />
+      <module name="Test_JDBC_CRUD" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

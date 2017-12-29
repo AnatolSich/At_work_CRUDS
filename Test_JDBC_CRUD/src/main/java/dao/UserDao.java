@@ -44,12 +44,13 @@ public class UserDao {
 
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
-
-            user.setId(resultSet.getInt(1));
-            user.setFirstName(resultSet.getString(2));
-            user.setLastName(resultSet.getString(3));
-            user.setEmail(resultSet.getString(4));
-            user.setDob(resultSet.getDate(5));
+            if (resultSet.next()) {
+                user.setId(resultSet.getInt(1));
+                user.setFirstName(resultSet.getString(2));
+                user.setLastName(resultSet.getString(3));
+                user.setEmail(resultSet.getString(4));
+                user.setDob(resultSet.getDate(5));
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
