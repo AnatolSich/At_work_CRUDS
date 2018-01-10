@@ -83,12 +83,13 @@ public class UserDao {
     public boolean updateUser(User user) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("UPDATE users SET firstname=?,lastname=?,email=?,dob=?");
+                    .prepareStatement("UPDATE users SET firstname=?,lastname=?,email=?,dob=? WHERE id=?");
 
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setDate(4, new Date(user.getDob().getTime()));
+            preparedStatement.setInt(5,user.getId());
 
             preparedStatement.execute();
         } catch (SQLException e) {

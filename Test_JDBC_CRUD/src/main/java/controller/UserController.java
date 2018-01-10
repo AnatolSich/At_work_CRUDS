@@ -59,7 +59,7 @@ public class UserController extends HttpServlet {
         user.setLastName(req.getParameter("lastName"));
         user.setEmail(req.getParameter("email"));
         try {
-            Date dob = new SimpleDateFormat("dd/mm/yyy").parse(req.getParameter("dob"));
+            Date dob = new SimpleDateFormat("dd/MM/yyy").parse(req.getParameter("dob"));
             user.setDob(dob);
         } catch (ParseException e) {
             e.printStackTrace();
