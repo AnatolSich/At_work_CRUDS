@@ -26,11 +26,12 @@
     First name: <input type="text" name="firstName" value="<c:out value="${user.firstName}"/>">
     Last name: <input type="text" name="lastName" value="<c:out value="${user.lastName}"/>">
     Email: <input type="text" name="email" value="<c:out value="${user.email}"/>">
-    Date of Birth: <input type="text" name="dob"
-                          value=" <c:choose>
-<c:when test="${user.dob!=null}"> <fmt:formatDate pattern="dd/MM/yyyy" value="<%datePattern(${user.dob})%>"/> </c:when>
-<c:otherwise> < <c:out value="dd/MM/yyyy"/> </c:otherwise>
-</c:choose> " >
+    Date of Birth: <c:choose>
+    <c:when test="${user.dob!=null}">
+        <input type="text" name="dob" value="  <fmt:formatDate pattern="dd/MM/yyyy" value="${user.dob}"/>">
+    </c:when>
+    <c:otherwise> <input type="text" name="dob" value=" <c:out value="dd/MM/yyyy"/>"> </c:otherwise>
+</c:choose>
     <input type="submit" value="Submit">
 </form>
 

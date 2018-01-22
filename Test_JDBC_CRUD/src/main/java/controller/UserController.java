@@ -43,7 +43,7 @@ public class UserController extends HttpServlet {
             req.setAttribute("user", userDao.getUserById(userIdValue));
         } else if (LIST.toString().equalsIgnoreCase(actionValue)) {
             view = USER_LIST;
-            req.setAttribute("userList", userDao.getAllUsers());
+            req.setAttribute("users", userDao.getAllUsers());
         } else {
             throw new RuntimeException("Invalid action");
         }
