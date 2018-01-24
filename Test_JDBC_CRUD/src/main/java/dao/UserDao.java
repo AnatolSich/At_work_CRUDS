@@ -15,7 +15,7 @@ public class UserDao {
     }
 
     public List<User> getAllUsers() {
-        List<User> usersList = new ArrayList<User>();
+        List<User> usersList = new ArrayList<>();
 
         try {
             PreparedStatement preparedStatement = connection

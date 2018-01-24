@@ -4,12 +4,11 @@ public class Car {
 
     String carNumber;
     int OwnerId;
-    int parkingCard;
 
-    public Car(String carNumber, int ownerId,int parkingCard) {
+    public Car(String carNumber, int ownerId) {
         this.carNumber = carNumber;
         this.OwnerId = ownerId;
-        this.parkingCard = parkingCard;
+
     }
 
     public Car() {
@@ -29,13 +28,5 @@ public class Car {
 
     public void setOwnerId(int ownerId) {
         OwnerId = ownerId;
-    }
-
-    public int getParkingCard() {
-        return parkingCard;
-    }
-
-    public void setParkingCard(int parkingCard) {
-        this.parkingCard = parkingCard;
     }
 }

@@ -4,14 +4,18 @@ import java.util.Date;
 
 public class ParkingCard {
     int id;
+    String carNumber;
     Date start;
     Date finish;
+    int period;
     double payCheck;
 
-    public ParkingCard(int id, Date start, Date finish, double payCheck) {
+    public ParkingCard(int id, String carNumber, Date start, Date finish, int period, double payCheck) {
         this.id = id;
+        this.carNumber = carNumber;
         this.start = start;
         this.finish = finish;
+        this.period = period;
         this.payCheck = payCheck;
     }
 
@@ -24,6 +28,14 @@ public class ParkingCard {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
     public Date getStart() {
@@ -40,6 +52,14 @@ public class ParkingCard {
 
     public void setFinish(Date finish) {
         this.finish = finish;
+    }
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(int period) {
+        this.period = period;
     }
 
     public double getPayCheck() {
