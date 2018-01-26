@@ -22,7 +22,7 @@ public class OwnerDB {
 
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("SELECT * FROM owners");
+                    .prepareStatement("SELECT * FROM owners ORDER BY id");
             ResultSet resultSet = preparedStatement.executeQuery();
             while ((resultSet.next())) {
                 Owner owner = new Owner(resultSet.getInt(1), resultSet.getString(2));
@@ -65,8 +65,9 @@ public class OwnerDB {
     public void editOwner(Owner owner){
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("UPDATE owners SET name=?");
+                    .prepareStatement("UPDATE owners SET name=? WHERE id=?");
             preparedStatement.setString(1,owner.getName());
+            preparedStatement.setInt(2,owner.getId());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

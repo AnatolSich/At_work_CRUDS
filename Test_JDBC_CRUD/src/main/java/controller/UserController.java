@@ -47,7 +47,6 @@ public class UserController extends HttpServlet {
         } else {
             throw new RuntimeException("Invalid action");
         }
-
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(view);
         requestDispatcher.forward(req, resp);
     }

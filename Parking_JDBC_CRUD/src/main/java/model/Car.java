@@ -3,11 +3,11 @@ package model;
 public class Car {
 
     String carNumber;
-    int OwnerId;
+    int ownerId;
 
     public Car(String carNumber, int ownerId) {
         this.carNumber = carNumber;
-        this.OwnerId = ownerId;
+        this.ownerId = ownerId;
 
     }
 
@@ -23,10 +23,10 @@ public class Car {
     }
 
     public int getOwnerId() {
-        return OwnerId;
+        return ownerId;
     }
 
     public void setOwnerId(int ownerId) {
-        OwnerId = ownerId;
+        ownerId = ownerId;
     }
 }

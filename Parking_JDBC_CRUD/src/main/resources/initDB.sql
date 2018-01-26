@@ -32,7 +32,7 @@ CREATE TABLE parking_cards (
   FOREIGN KEY (car_number) REFERENCES cars (car_number) ON DELETE CASCADE
 );
 
-SELECT
+/*SELECT
   parking_cards.id,
   TAB.name,
   parking_cards.car_number,
@@ -45,8 +45,8 @@ FROM parking_cards, (SELECT
                        owners.name
                      FROM cars
                        INNER JOIN owners ON cars.owner_id = owners.id
-                     WHERE owners.id = 1001) AS TAB
-WHERE parking_cards.car_number = TAB.car_number;
+                     WHERE owners.id = 1000) AS TAB
+WHERE parking_cards.car_number = TAB.car_number;*/
 
 /*
 CREATE OR REPLACE FUNCTION public.fillPeriod(
