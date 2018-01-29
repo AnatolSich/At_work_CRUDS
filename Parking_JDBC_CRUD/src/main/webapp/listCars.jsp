@@ -17,20 +17,19 @@
     <tr>
         <th>Car number</th>
         <th>Owner ID</th>
-        <th colspan="2">Operations</th>
+        <th colspan="3">Operations</th>
     </tr>
-<c:choose>
-    <c:when test="${cars!=null}">
-        <c:forEach var="tempCar" items="cars">
+
+        <c:forEach var="tempCar" items="${cars}">
         <tr>
             <td><c:out value="${tempCar.carNumber}"></c:out></td>
             <td><c:out value="${tempCar.ownerId}"></c:out></td>
             <td><a href="/CarCommit?action=EDIT&carNumber=<c:out value="${tempCar.carNumber}"></c:out>">Edit</a></td>
             <td><a href="/CarCommit?action=DELETE&carNumber=<c:out value="${tempCar.carNumber}"></c:out>">Delete</a></td>
+            <td><a href="/ParkingCardCommit?action=LIST_PARKING_CARDS_BY_CAR_NUMBER&carNumber=<c:out value="${tempCar.carNumber}"></c:out>">ParkingCards</a></td>
         </tr>
     </c:forEach>
-    </c:when>
-</c:choose>
+
 
 </table>
 <a href="/CarCommit?action=CREATE">Create</a>

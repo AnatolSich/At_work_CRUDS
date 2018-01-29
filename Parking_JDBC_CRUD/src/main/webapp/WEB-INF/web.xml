@@ -22,11 +22,11 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>ParkingController</servlet-name>
-        <servlet-class>controller.ParkingController</servlet-class>
+        <servlet-name>ParkingCardController</servlet-name>
+        <servlet-class>controller.ParkingCardController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ParkingController</servlet-name>
-        <url-pattern>/ParkingCommit</url-pattern>
+        <servlet-name>ParkingCardController</servlet-name>
+        <url-pattern>/ParkingCardCommit</url-pattern>
     </servlet-mapping>
 </web-app>

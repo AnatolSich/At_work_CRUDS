@@ -18,5 +18,9 @@
     Name <input type="text" name="name">
     <input type="submit" value="Submit">
 </form>
+<br>
+<br>
+<br>
+<a href="parking.jsp">Start page</a>
 </body>
 </html>

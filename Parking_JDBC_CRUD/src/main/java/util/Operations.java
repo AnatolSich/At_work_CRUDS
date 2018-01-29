@@ -7,5 +7,6 @@ public enum Operations {
     LIST_PARKING_CARDS_BY_OWNER_ID,
     CREATE,
     EDIT,
-    DELETE
+    DELETE,
+    CALCULATE
 }

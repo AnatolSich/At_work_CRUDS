@@ -43,7 +43,7 @@ public class OwnerController extends HttpServlet {
             req.setAttribute("owners", ownerDB.getAllOwners());
             view = LIST_OWNERS;
         } else {
-            throw new RuntimeException("Invalid request");
+            throw new RuntimeException("Invalid ownerController request");
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher(view);
         dispatcher.forward(req, resp);

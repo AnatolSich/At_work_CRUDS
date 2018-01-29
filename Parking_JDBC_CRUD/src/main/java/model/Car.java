@@ -27,6 +27,6 @@ public class Car {
     }
 
     public void setOwnerId(int ownerId) {
-        ownerId = ownerId;
+        this.ownerId = ownerId;
     }
 }

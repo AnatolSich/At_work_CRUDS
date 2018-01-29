@@ -11,6 +11,15 @@
     <title>Create Car</title>
 </head>
 <body>
-
+<h1>Create Car</h1>
+<form action="/CarCommit?creation=new" method="post">
+    Car Number <input type="text" name="carNumber">
+    OwnerID <input type="text" name="ownerId">
+    <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<br>
+<a href="parking.jsp">Start page</a>
 </body>
 </html>

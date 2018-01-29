@@ -32,7 +32,35 @@ CREATE TABLE parking_cards (
   FOREIGN KEY (car_number) REFERENCES cars (car_number) ON DELETE CASCADE
 );
 
-/*SELECT
+
+
+
+
+
+
+
+/*
+
+SELECT SUM(parking_cards.payCheck)
+FROM  parking_cards, (SELECT cars.car_number
+                      FROM cars INNER JOIN owners ON cars.owner_id = owners.id
+                      WHERE owners.id='1001') AS TAB
+WHERE parking_cards.car_number=TAB.car_number;
+
+SELECT SUM(parking_cards.payCheck)
+FROM parking_cards
+WHERE car_number='a11';
+
+
+SELECT finish-parking_cards.start, (finish-parking_cards.start)*2.4
+  FROM parking_cards
+
+UPDATE parking_cards SET period = finish-parking_cards.start,
+payCheck=(finish-parking_cards.start)*2.4;
+
+
+
+SELECT
   parking_cards.id,
   TAB.name,
   parking_cards.car_number,

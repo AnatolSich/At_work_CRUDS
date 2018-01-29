@@ -80,12 +80,13 @@ public class CarDB {
         }
     }
 
-    public void editCar(Car car) {
+    public void editCar(String oldCarNumber, Car car) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("UPDATE cars SET owner_id=? WHERE car_number=?");
-            preparedStatement.setInt(1, car.getOwnerId());
-            preparedStatement.setString(2, car.getCarNumber());
+                    .prepareStatement("UPDATE cars SET car_number=?, owner_id=? WHERE car_number=?");
+            preparedStatement.setString(1,car.getCarNumber());
+            preparedStatement.setInt(2, car.getOwnerId());
+            preparedStatement.setString(3, oldCarNumber);
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

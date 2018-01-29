@@ -17,8 +17,12 @@
     <tr>
         <th><a href="/OwnerCommit?action=LIST">Owners</a></th>
         <th><a href="/CarCommit?action=LIST">Cars</a></th>
-        <th><a href="/ParkingCommit?action=LIST">Parking Cards</a></th>
+        <th><a href="/ParkingCardCommit?action=LIST">Parking Cards</a></th>
     </tr>
 </table>
+<br>
+<br>
+<br>
+<a href="/ParkingCardCommit?action=CALCULATE">Calculate all payChecks</a>
 </body>
 </html>
